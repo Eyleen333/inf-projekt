@@ -30,8 +30,6 @@ function perleGecklickt() {
     anzahlSchwarz = getNumbers(schwarzDivs);
     anzahlOrange = getNumbers(orangeDivs);
     const besetzt = anzahlSchwarz.concat(anzahlOrange);
-    console.log(anzahlSchwarz);
-    console.log(anzahlOrange);
     if(perleNummer % 4 == 0) {
         perleUpdaten(this, perleNummer, besetzt); 
         spielerWechseln();
@@ -91,7 +89,7 @@ function perleUpdaten(perle, perleNummer, besetzt) {
     }
 }
 function suchGewonnen(perleNummer, anzahlSchwarz, anzahlOrange, besetzt) {
-    suchSenkrecht(perleNummer, anzahlSchwarz, anzahlOrange, besetzt); 
+    //suchSenkrecht(perleNummer, anzahlSchwarz, anzahlOrange, besetzt); 
 }
 function suchSenkrecht(perleNummer, anzahlSchwarz, anzahlOrange, besetzt) {
     Number(perleNummer);
@@ -99,18 +97,19 @@ function suchSenkrecht(perleNummer, anzahlSchwarz, anzahlOrange, besetzt) {
         let a = perleNummer + 3;
         let b = perleNummer + 2;
         let c = perleNummer + 1;
+        // d = perleNummer; 
         const senkrecht = [a, b, c];
-       // d = perleNummer; 
-    }
-    if(anzahlSchwarz.includes(senkrecht)) {
-        Status.textContent = `Schwarz hat gewonnen!`;
-        console.log("gewonnenS");
-        neuesSpielLaden(anzahlSchwarz, anzahlOrange);
-    }
-    if(anzahlOrange.includes(senkrecht)){
-        Status.textContent = `Orange hat gewonnen!`;
-        console.log("gewonnenO");
-        neuesSpielLaden(anzahlSchwarz, anzahlOrange);
+    
+        if(anzahlSchwarz.includes(senkrecht)) {
+            Status.textContent = `Schwarz hat gewonnen!`;
+            console.log("gewonnenS");
+            neuesSpielLaden();
+        }
+        if(anzahlOrange.includes(senkrecht)){
+            Status.textContent = `Orange hat gewonnen!`;
+            console.log("gewonnenO");
+            neuesSpielLaden();
+        }
     }
 }
 
@@ -118,7 +117,11 @@ function gewonnen() {
 
 
 }
-function neuesSpielLaden(anzahlSchwarz, anzahlOrange) {
-    anzahlOrange.classList.remove("perleO");
-    anzahlSchwarz.classList.remove("perleS");
+function neuesSpielLaden(besetzt) {
+    for(let i = 0; i < 64; i++) {
+        if(besetzt.includes(i + 1)) {
+            perle.classList.remove(perleS);
+            perle.classList.remove(perleO); 
+        }
+    }
 }
