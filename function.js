@@ -3,6 +3,9 @@ const schwarz = document.querySelectorAll(".perleS");
 const orange = document.querySelectorAll(".perleO");
 const neuesSpiel = document.querySelector("#neuesSpiel");
 const Status = document.querySelector("#status");
+const scoreO = document.querySelector("#scoreO");
+const scoreS = document.querySelector("#scoreS");
+const neuerScore = document.querySelector("#neuerScore");
 
 
 function getNumbers(elements) {
@@ -12,18 +15,17 @@ function getNumbers(elements) {
     }
     return numbers
 }
-
-let running = false;
 amZug = orange;
 Status.textContent = `Orange beginnt`;
-
+o = 0 
+s = 0
 
 
 spielAnfangen()
 function spielAnfangen() {
     perlen.forEach(perlen => perlen.addEventListener("click", perleGecklickt));
     neuesSpiel.addEventListener("click", neuesSpielLaden);
-    running = true;
+    neuerScore.addEventListener("click", neuerScoreLaden);
 }
 function perleGecklickt() {
     const perleNummer = Number(this.getAttribute("nummer"));
@@ -546,11 +548,17 @@ function gewonnenFrage(a, b, c, d) {
     }
     if(count == 4) {
         Status.textContent = `Schwarz hat gewonnen!`;
+        s = 1 + s
+        scoreS.textContent= s
+        console.log(s)
         console.log("gewonnenS");
         gewonnen();
     }
     if(count == -4){
         Status.textContent = `Orange hat gewonnen!`;
+        o = 1 + o
+        scoreO.textContent= o
+        console.log(o)
         console.log("gewonnenO");
         gewonnen(); 
     }
@@ -565,4 +573,8 @@ function neuesSpielLaden() {
         amZug = orange
         Status.textContent = `Orange beginnt`
     }
+}
+function neuerScoreLaden() {
+    scoreO.textContent= `0`
+    scoreS.textContent= `0`
 }

@@ -50,7 +50,15 @@
         }
         #neuesSpiel {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: medium;
+            font-size: large;
+            position: absolute;
+            top: 60px;
+            right: 100px;
+            color: brown;
+        }
+        #neuerScore {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
             position: absolute;
             top: 100px;
             right: 100px;
@@ -58,10 +66,42 @@
         }
         #status {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: medium;
+            font-size: large;
             position: absolute;
             top: 130px;
             right: 100px;
+            color: brown;
+        }
+        #score {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            position: absolute;
+            top: 160px;
+            right: 170px;
+            color: brown;
+        }
+        #scoreO {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: larger;
+            position: absolute;
+            top: 160px;
+            right: 140px;
+            color: orange;
+        }
+        #scoreS {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: larger;
+            position: absolute;
+            top: 160px;
+            right: 100px;
+            color: black;
+        }
+        #scoreBindestrich {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            position: absolute;
+            top: 160px;
+            right: 125px;
             color: brown;
         }
     </style>
@@ -167,7 +207,12 @@
             <div nummer="64" nummerS="16" class="perle"></div>
         </div>
     </div>
-    <button id="neuesSpiel">Neues Spiel</button>
+    <button id="neuesSpiel">neues Spiel</button>
+    <button id="neuerScore">Score zurücksetzten</button>
     <h2 id="status">Status:</h2>
+    <h2 id="score">Score:</h2>
+    <h2 id="scoreO">0</h2>
+    <h2 id="scoreBindestrich">-</h2>
+    <h2 id="scoreS">0</h2>
     <script src="function.js"></script>
 </body>
