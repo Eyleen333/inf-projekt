@@ -1,6 +1,7 @@
 const perlen = document.querySelectorAll(".perle");
 const schwarz = document.querySelectorAll(".perleS");
 const orange = document.querySelectorAll(".perleO");
+const rot = document.querySelectorAll(".perleG");
 const neuesSpiel = document.querySelector("#neuesSpiel");
 const Status = document.querySelector("#status");
 const scoreO = document.querySelector("#scoreO");
@@ -550,26 +551,40 @@ function gewonnenFrage(a, b, c, d) {
         Status.textContent = `Schwarz hat gewonnen!`;
         s = 1 + s
         scoreS.textContent= s
-        console.log(s)
         console.log("gewonnenS");
-        gewonnen();
+        gewonnen(Liste, count);
     }
     if(count == -4){
         Status.textContent = `Orange hat gewonnen!`;
         o = 1 + o
         scoreO.textContent= o
-        console.log(o)
         console.log("gewonnenO");
-        gewonnen(); 
+        gewonnen(Liste, count); 
     }
 }
-function gewonnen() {
-    neuesSpielLaden();
+function gewonnen(Liste, count) {
+    a.classList.add("perleG");
+    if(count == -4) {
+        for(let l in Liste) {
+
+            x = querySelector(nummer = )
+            x.classList.remove("perleO");
+            x.classList.add("perleG");
+        }
+    }
+    if(count == 4) {
+        for(let l in Liste) {
+            x = Liste[l];
+            x.classList.remove("perleS");
+            x.classLIst.add("perleG");
+        }
+    }
 }
 function neuesSpielLaden() {
     for(let p of perlen) {
         p.classList.remove("perleS");
         p.classList.remove("perleO");
+        p.classList.remove("perleG");
         amZug = orange
         Status.textContent = `Orange beginnt`
     }
