@@ -563,20 +563,18 @@ function gewonnenFrage(a, b, c, d) {
     }
 }
 function gewonnen(Liste, count) {
-    a.classList.add("perleG");
     if(count == -4) {
         for(let l in Liste) {
-
-            x = querySelector(nummer = )
-            x.classList.remove("perleO");
-            x.classList.add("perleG");
-        }
+            perleG = querySelector("nummer = [l]Liste");
+            perleG.classList.remove("perleO");
+            perleG.classList.add("perleG");
+        }   
     }
     if(count == 4) {
         for(let l in Liste) {
-            x = Liste[l];
-            x.classList.remove("perleS");
-            x.classLIst.add("perleG");
+            perleG = querySelector("nummer = [l]Liste");
+            perleG.classList.remove("perleS");
+            perleG.classList.add("perleG");
         }
     }
 }
