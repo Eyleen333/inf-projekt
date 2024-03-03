@@ -588,6 +588,8 @@ function neuesSpielLaden() {
     }
 }
 function neuerScoreLaden() {
-    scoreO.textContent= `0`
-    scoreS.textContent= `0`
+    o = 0;
+    s = 0;
+    scoreO.textContent= `0`;
+    scoreS.textContent= `0`;
 }
